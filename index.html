@@ -32,12 +32,24 @@
           transition-duration: 500ms;
         }
       }
+
+      .loader {
+        position: fixed;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+        background: url("assets/img/loading.gif") 50% 50% no-repeat
+          rgb(249, 249, 249);
+      }
     </style>
 
     <!-- Title -->
     <title>Mitra Technology</title>
   </head>
   <body>
+    <div class="loader"></div>
     <!-- MODALS -->
     <!-- Example -->
     <div
@@ -1813,5 +1825,11 @@
 
     <!-- Theme JS -->
     <script src="./assets/js/theme.bundle.js"></script>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script>
+      $(window).load(function () {
+        $(".loader").fadeOut("slow");
+      });
+    </script>
   </body>
 </html>
